@@ -33,3 +33,18 @@ window.addEventListener("scroll", () => {
     backToTop.classList.remove("visible");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.setAttribute("data-theme", savedTheme);
+  themeToggle.checked = savedTheme === "dark";
+
+  themeToggle.addEventListener("change", (e) => {
+    const theme = e.target.checked ? "dark" : "light";
+    body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  });
+});
