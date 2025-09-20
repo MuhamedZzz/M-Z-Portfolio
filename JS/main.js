@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const body = document.body;
 
-  const savedTheme = localStorage.getItem("theme") || "light";
+  const savedTheme = localStorage.getItem("theme") || "dark";
   body.setAttribute("data-theme", savedTheme);
   themeToggle.checked = savedTheme === "dark";
 
